@@ -1,0 +1,8 @@
+{
+    "config": "flex",
+    "compilerOptions": {
+        "output": "bin/my-game.swf", // 输出SWF的路径
+        "source-path": ["src"]       // 源代码路径
+    },
+    "mainClass": "Main"              // 文档类（入口点）
+}
