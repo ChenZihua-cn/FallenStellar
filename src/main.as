@@ -1,8 +1,12 @@
 package {
     import flash.display.Sprite;
     import flash.events.Event;
+    import core.GameEngine;
+    import core.GameConfig;
 
+    [SWF(width="800", height="600", frameRate="60", backgroundColor="#000000")]
     public class Main extends Sprite {
+        private var gameEngine:GameEngine;
 
         public function Main() {
             if (stage) init();
@@ -11,11 +15,12 @@ package {
 
         private function init(e:Event = null):void {
             removeEventListener(Event.ADDED_TO_STAGE, init);
-            // 游戏初始化代码从这里开始
-            trace("Hello World from VSCode!");
-            graphics.beginFill(0xFF0000);
-            graphics.drawCircle(200, 200, 50);
-            graphics.endFill();
+
+            // Initialize game engine
+            gameEngine = GameEngine.getInstance();
+            gameEngine.initialize();
+
+            trace("[FallenStellar] Game initialized");
         }
     }
 }
